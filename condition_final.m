@@ -1,0 +1,8 @@
+function condition = condition_final(l1, l2, xei, yei, zei, xp, yp, zp)
+var1 = 2*l1^2*xei^2 + 2*l2^2*xei^2 + 2*l1^2*xp^2 + 2*l2^2*xp^2 - 2*l1^2*yei^2 + 2*l2^2*yei^2 - 2*l1^2*yp^2 + 2*l2^2*yp^2 + 2*l1^2*zei^2 + 2*l2^2*zei^2 + 2*l1^2*zp^2 + 2*l2^2*zp^2 - 6*xei^2*xp^2 - 2*xei^2*yei^2 - 2*xei^2*yp^2 - 2*xp^2*yei^2 - 2*xp^2*yp^2 - 2*xei^2*zei^2 - 2*xei^2*zp^2 - 2*xp^2*zei^2 - 6*yei^2*yp^2 - 2*xp^2*zp^2 - 2*yei^2*zei^2 - 2*yei^2*zp^2 - 2*yp^2*zei^2 - 2*yp^2*zp^2 - 6*zei^2*zp^2 + 4*xei*xp^3 + 4*xei^3*xp + 4*yei*yp^3 + 4*yei^3*yp + 4*zei*zp^3 + 4*zei^3*zp - l1^4 - l2^4 - xei^4 - xp^4 - yei^4 - yp^4 - zei^4 - zp^4 + 2*l1^2*l2^2 - 4*l1^2*xei*xp - 4*l2^2*xei*xp + 4*l1^2*yei*yp - 4*l2^2*yei*yp - 4*l1^2*zei*zp - 4*l2^2*zei*zp + 4*xei*xp*yei^2 + 4*xei*xp*yp^2 + 4*xei*xp*zei^2 + 4*xei^2*yei*yp + 4*xei*xp*zp^2 + 4*xp^2*yei*yp + 4*yei*yp*zei^2 + 4*xei^2*zei*zp + 4*yei*yp*zp^2 + 4*xp^2*zei*zp + 4*yei^2*zei*zp + 4*yp^2*zei*zp - 8*xei*xp*yei*yp - 8*xei*xp*zei*zp - 8*yei*yp*zei*zp;
+if var1 >= 0
+    var2 = ((xei-xp)*(var1)^(1/2) - l1^2*zei + l2^2*zei + l1^2*zp - l2^2*zp - xei^2*zei + xei^2*zp - xp^2*zei + xp^2*zp - yei^2*zei + yei^2*zp - yp^2*zei + yp^2*zp - 3*zei*zp^2 + 3*zei^2*zp - zei^3 + zp^3 + 2*xei*xp*zei - 2*xei*xp*zp + 2*yei*yp*zei - 2*yei*yp*zp)/(l1*(xei^2 - 2*zei*zp - 2*xei*xp + xp^2 + zei^2 + zp^2));
+    condition = xei^2 + xp^2 + zei^2 + zp^2 ~= 2*xei*xp + 2*zei*zp && var2 >= -2 && var2 <= 2;
+else
+    condition = false;
+end

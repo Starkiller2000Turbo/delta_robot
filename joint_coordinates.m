@@ -1,0 +1,20 @@
+function [xe1, ye1, ze1, xp1, yp1, zp1, al1, xe2, ye2, ze2, xp2, yp2, zp2, al2, xe3, ye3, ze3, xp3, yp3, zp3, al3] = joint_coordinates(r0, re, xe, ye, ze, al1, al2, al3)
+xe1 = xe + re*cos(al1);
+ye1 = ye + re*sin(al1);
+ze1 = ze;
+xp1 = r0*cos(al1);
+yp1 = r0*sin(al1);
+zp1 = 0;
+xe2 = xe + re*cos(al2);
+ye2 = ye + re*sin(al2);
+ze2 = ze;
+xp2 = r0*cos(al2);
+yp2 = r0*sin(al2);
+zp2 = 0;
+xe3 = xe + re*cos(al3);
+ye3 = ye + re*sin(al3);
+ze3 = ze;
+xp3 = r0*cos(al3);
+yp3 = r0*sin(al3);
+zp3 = 0;
+end
